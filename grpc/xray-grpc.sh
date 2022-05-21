@@ -54,7 +54,7 @@ cat > /etc/xray/vmessgrpc.json << END
     },
     "inbounds": [
         {
-            "port": 3380,
+            "port": 443,
             "protocol": "vmess",
             "settings": {
                 "clients": [
@@ -167,7 +167,7 @@ cat > /etc/xray/vlessgrpc.json << END
     },
     "inbounds": [
         {
-            "port": 4480,
+            "port": 443,
             "protocol": "vless",
             "settings": {
                 "clients": [
@@ -304,10 +304,10 @@ RestartPreventExitStatus=23
 WantedBy=multi-user.target
 EOF
 
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 3380 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 3380 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 4480 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 4480 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
