@@ -68,7 +68,7 @@ cat > /etc/xray/v2ray-tls.json << END
   },
   "inbounds": [
     {
-      "port": 2096,
+      "port": 443,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -91,7 +91,7 @@ cat > /etc/xray/v2ray-tls.json << END
           ]
         },
         "wsSettings": {
-          "path": "/gandring",
+          "path": "/bagoes",
           "headers": {
             "Host": ""
           }
@@ -165,7 +165,7 @@ cat > /etc/xray/v2ray-nontls.json << END
   },
   "inbounds": [
     {
-      "port": 2095,
+      "port": 443,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -179,7 +179,7 @@ cat > /etc/xray/v2ray-nontls.json << END
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/gandring",
+          "path": "/bagoes",
           "headers": {
             "Host": ""
           }
@@ -276,7 +276,7 @@ cat > /etc/xray/vless-tls.json << END
           ]
         },
         "wsSettings": {
-          "path": "/gandring",
+          "path": "/bagoes",
           "headers": {
             "Host": ""
           }
@@ -363,7 +363,7 @@ cat > /etc/xray/vless-nontls.json << END
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/gandring",
+          "path": "/bagoes",
           "headers": {
             "Host": ""
           }
@@ -438,7 +438,7 @@ cat > /etc/xray/vless-grpc.json <<END
   "inbounds": [
     {
       "listen": "127.0.0.1",
-      "port": 24468,
+      "port": 443,
       "protocol": "dokodemo-door",
       "settings": {
         "address": "127.0.0.1"
@@ -477,7 +477,7 @@ cat > /etc/xray/vless-grpc.json <<END
         "httpSettings": {},
         "quicSettings": {},
         "grpcSettings": {
-          "serviceName": "gandring"
+          "serviceName": "bagoes"
         }
       },
       "sniffing": {
@@ -568,7 +568,7 @@ cat > /etc/xray/trojan.json <<END
   },
   "inbounds": [
     {
-      "port": 2087,
+      "port": 443,
       "protocol": "trojan",
       "settings": {
         "clients": [
@@ -737,7 +737,7 @@ cat > /etc/trojan-go/config.json << END
 {
   "run_type": "server",
   "local_addr": "0.0.0.0",
-  "local_port": 2053,
+  "local_port": 443,
   "remote_addr": "127.0.0.1",
   "remote_port": 88,
   "log_level": 1,
@@ -780,7 +780,7 @@ cat > /etc/trojan-go/config.json << END
   },
   "websocket": {
     "enabled": true,
-    "path": "/gandring",
+    "path": "/bagoes",
     "host": "$domain"
   },
     "api": {
