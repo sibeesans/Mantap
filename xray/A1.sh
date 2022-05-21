@@ -165,7 +165,7 @@ cat > /etc/xray/v2ray-nontls.json << END
   },
   "inbounds": [
     {
-      "port": 443,
+      "port": 80,
       "protocol": "vmess",
       "settings": {
         "clients": [
