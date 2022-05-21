@@ -53,7 +53,7 @@ cat << EOF > /etc/xray/beta.json
   },
   "inbounds": [
     {
-      "port": 9443,
+      "port": 443,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -93,7 +93,7 @@ cat << EOF > /etc/xray/beta.json
       }
     },
     {
-      "port": 2001,
+      "port": 443,
       "listen": "127.0.0.1",
       "protocol": "vless",
       "settings": {
