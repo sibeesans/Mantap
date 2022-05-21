@@ -71,7 +71,7 @@ cat> /etc/xray/xtls.json << END
     },
     "inbounds": [
       {
-      "port": 4369,
+      "port": 443,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -104,7 +104,7 @@ cat> /etc/xray/xtls.json << END
       }
     },
     {
-      "port": 4369,
+      "port": 443,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -137,7 +137,7 @@ cat> /etc/xray/xtls.json << END
       }
     },
     {
-      "port": 7869,
+      "port": 443,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -173,7 +173,7 @@ cat> /etc/xray/xtls.json << END
       }
     },
     {
-      "port": 7869,
+      "port": 442,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -217,7 +217,7 @@ cat> /etc/xray/xtls.json << END
       }
     },
     {
-      "port": 2069,
+      "port": 443,
       "protocol": "trojan",
       "settings": {
         "clients": [
@@ -347,14 +347,14 @@ END
 
 # // Enable & Start Service
 # Accept port XTLS Xray
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 4369 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 4369 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 7869 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 7869 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2069 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2069 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
